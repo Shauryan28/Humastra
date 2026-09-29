@@ -39,21 +39,73 @@ function initMobileMenu() {
   const navMenu = document.querySelector('.nav-menu');
   if (!toggleBtn || !navMenu) return;
 
-  toggleBtn.addEventListener('click', () => {
+  // Ensure mobile drawer has a prominent CTA link
+  if (!navMenu.querySelector('.mobile-drawer-cta-wrapper')) {
+    const isSubfolder = window.location.pathname.includes('/insights/');
+    const contactHref = isSubfolder ? '../contact.html' : 'contact.html';
+    const ctaLi = document.createElement('li');
+    ctaLi.className = 'mobile-drawer-cta-wrapper';
+    ctaLi.innerHTML = `
+      <a href="${contactHref}" class="btn btn-primary mobile-drawer-cta">
+        Discuss a Search Mandate
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    `;
+    navMenu.appendChild(ctaLi);
+  }
+
+  const closeMenu = () => {
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    navMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  const openMenu = () => {
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    navMenu.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-    toggleBtn.setAttribute('aria-expanded', !isExpanded);
-    navMenu.classList.toggle('open');
-    document.body.style.overflow = !isExpanded ? 'hidden' : '';
+    if (isExpanded) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
   // Close when clicking nav links
-  navMenu.querySelectorAll('.nav-link').forEach(link => {
+  navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      navMenu.classList.remove('open');
-      document.body.style.overflow = '';
+      closeMenu();
     });
   });
+
+  // Close when clicking outside of nav menu on mobile
+  document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+      closeMenu();
+      toggleBtn.focus();
+    }
+  });
+
+  // Reset body overflow when resizing beyond mobile breakpoint
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 820 && navMenu.classList.contains('open')) {
+      closeMenu();
+    }
+  }, { passive: true });
 }
 
 /**
