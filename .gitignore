@@ -1,0 +1,9 @@
+# Temporary test files & screenshots
+screenshot*.png
+*.log
+*.tmp
+test_*.html
+debug*.js
+debug*.html
+audit*.py
+check*.py

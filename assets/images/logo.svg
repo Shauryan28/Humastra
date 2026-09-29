@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <style>
+      .logo-mark { fill: none; stroke: #C5A880; stroke-width: 2.5; stroke-linejoin: round; }
+      .logo-dot { fill: #C5A880; }
+      .logo-text { font-family: 'Newsreader', Georgia, serif; font-size: 26px; fill: #F8F9FA; letter-spacing: 0.14em; font-weight: 500; }
+      .logo-sub { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 8.5px; fill: #A0AAB8; letter-spacing: 0.22em; font-weight: 600; text-transform: uppercase; }
+    </style>
+  </defs>
+  <!-- Geometric Emblem -->
+  <g transform="translate(10, 10)">
+    <polygon points="20,4 36,36 4,36" class="logo-mark" />
+    <circle cx="20" cy="25" r="4.5" class="logo-dot" />
+  </g>
+  <!-- Typographic Wordmark -->
+  <text x="62" y="34" class="logo-text">HUMASTRA</text>
+  <text x="63" y="48" class="logo-sub">LEADERSHIP ADVISORY</text>
+</svg>

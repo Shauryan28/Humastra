@@ -1,0 +1,6 @@
+# HUMASTRA Robots.txt Directive
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://humastra.com/sitemap.xml
