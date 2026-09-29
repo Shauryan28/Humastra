@@ -20,10 +20,10 @@ HUMASTRA is built on the philosophy of elite strategic advisory rather than tran
 ## Firm Leadership
 
 * **Himanshu Nandecha** — *Founder & Chief Executive Officer*
-  * Former Head of Talent Acquisitions at **Topaz Multi Groups** (Vadodara, Gujarat).
-  * Independent Non-Executive Director at **Ajwa Fun World & Resorts Ltd.** (BSE-listed entity).
+  * More than 30 years of executive search and corporate talent acquisition leadership across diversified enterprise business groups.
+  * Independent Non-Executive Director serving on the Board of Directors of publicly listed corporate entities, guiding fiduciary governance and talent risk oversight.
   * Verified Platform Advisor & Mentor on [Topmate](https://topmate.io/nandecha) and [LinkedIn](https://linkedin.com/in/nandecha).
-  * Profile page incorporates verifiable corporate governance and talent acquisition credentials.
+  * Profile page incorporates verified corporate governance and three-decade talent acquisition credentials.
 
 ---
 
@@ -68,7 +68,6 @@ Humastra/
         ├── advisory-room.jpg            # Bespoke executive advisory suite visual
         ├── talent-mapping.jpg           # Architectural compass & blueprint talent mapping asset
         ├── insights-briefing.jpg        # Editorial briefing flat-lay photograph
-        ├── himanshu-nandecha.jpg        # Verified portrait of Founder & CEO Himanshu Nandecha
         └── logo.svg                     # Vector geometric emblem & wordmark logo
 ```
 
